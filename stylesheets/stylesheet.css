@@ -49,6 +49,7 @@ header ul
 header ul li
 {
   display:inline;
+  list-style-type:none;
 }
 header h1 {
   font-size: 30px;
