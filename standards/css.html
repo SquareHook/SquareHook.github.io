@@ -10,13 +10,36 @@ title: CSS Coding Standards
   <pre>
     <code class="css">
     /* Indent by 2 spaces at a time. Don't use tabs or mix tabs and spaces. */
-    <ul>
-      <li>Fantastic
-      <li>Great
-    </ul>
    .example {
      color: blue;
     } 
+    
+    /* Avoid qualifying ID and class names with type selectors */
+    /*Not recommended */
+    ul#example { }
+    div.error { }
+    
+    /* Recommended */
+    #example { }
+    .error { }
+    
+    /* Use shorthand properties where possible */
+    /* Not recommended */
+    border-top-style: none;
+    font-family: palatino, georgia, serif;
+    font-size: 100%;
+    line-height: 1.6;
+    padding-bottom: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0;
+    
+    /* Recommended */
+    border-top: 0;
+    font: 100%/1.6 palatino, georgia, serif;
+    padding: 0 1em 2em;
+    
+    
    
     </code>
   </pre>
