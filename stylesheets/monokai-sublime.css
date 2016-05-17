@@ -42,6 +42,10 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
   font-weight: bold;
 }
 
+.hljs pre ul li:before
+{
+  content:none;
+}
 .hljs-emphasis {
   font-style: italic;
 }
