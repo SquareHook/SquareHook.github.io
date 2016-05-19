@@ -18,6 +18,7 @@ body {
 #main_content pre
 {
   background-color:#333 !important;
+  border:none;
 }
 
 code 
