@@ -1,0 +1,21 @@
+--- layout: default title: C# Coding Standards ---
+<h2> C# Coding Standards</h2>
+<h3>Comments </h3>
+<p>
+    Comments should be placed throughout your code, especially in areas that are not easily understood at a glance. At the bare minimum, you should write a comment above each method. Use triple forward slashes to generate a comment that will show in Visual Studio auto-complete.
+</p>
+<pre>
+    <code class="C#">
+        /// <summary>
+        /// Return a list of stages that products can be in
+        /// </summary>
+        /// <returns>JSON object showing stages</returns>
+        public async Task<JsonResult> GetStages()
+        {
+            string message = "successful call to GetStages";
+            bool success = true;
+            var results = new List<Stage>();
+            try
+            {
+    </code>
+  </pre>
