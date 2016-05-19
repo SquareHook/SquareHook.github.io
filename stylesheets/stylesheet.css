@@ -10,6 +10,11 @@ body {
 
 /* General & 'Reset' Stuff */
 
+#main_content
+{
+  padding-top:100px;
+}
+
 .container {
   width: 90%;
   max-width: 600px;
