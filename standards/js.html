@@ -3,13 +3,13 @@ layout: default
 title: JavaScript Code Standards
 ---
 
-<h2>
+<h3>
 Always use semicolons.
 
 Relying on implicit insertion can cause subtle, hard to debug problems. Don't do it. You're better than that.
 
 There are a couple places where missing semicolons are particularly dangerous:
-</h2>
+</h3>
 <pre>
   <code class="javascript">
     // 1.
@@ -39,3 +39,19 @@ There are a couple places where missing semicolons are particularly dangerous:
     
   </code>
 </pre>
+
+<h4>
+  So what happens and why?
+</h4>
+<p>
+  
+    1. JavaScript error - first the function returning 42 is called with the second function as a parameter, then the number 42 is "called" resulting in an error.
+    2. You will most likely get a 'no such property in undefined' error at runtime as it tries to call x[ffVersion, ieVersion][isIE]().
+    3. die is always called since the array minus 1 is NaN which is never equal to anything (not even if resultOfOperation() returns NaN) and THINGS_TO_EAT gets assigned the result of die().
+
+</p>
+<p>
+    JavaScript requires statements to end with a semicolon, except when it thinks it can safely infer their existence. In each of these examples, a function declaration or object or array literal is used inside a statement. The closing brackets are not enough to signal the end of the statement. Javascript never ends a statement if the next token is an infix or bracket operator.
+  
+    This has really surprised people, so make sure your assignments end with semicolons.
+</p>
