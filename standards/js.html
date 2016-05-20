@@ -60,7 +60,9 @@ There are a couple places where missing semicolons are particularly dangerous:
     This has really surprised people, so make sure your assignments end with semicolons.
 </p>
 
-<h3>Semicolons and functions</h3>
+<br>
+
+<h3>Semicolons and Functions</h3>
 <p>
   Clarification: 
   Semicolons should be included at the end of function expressions, but not at the end of function declarations. The distinction is best illustrated with an example:
@@ -77,3 +79,20 @@ There are a couple places where missing semicolons are particularly dangerous:
     }  // no semicolon here.
   </code>
 </pre>
+
+<br>
+
+<h3>Function Declaration Within Code Blocks</h3>
+<span class="text-danger">Bad: Don't Do This</span>
+<pre>
+  <code>
+    if (x) {
+      function foo() {}
+    }
+  </code>
+</pre>
+
+<h4>Why not? </h4>
+<p>
+  While most script engines support Function Declarations within blocks it is not part of ECMAScript (see ECMA-262, clause 13 and 14). Worse implementations are inconsistent with each other and with future EcmaScript proposals. ECMAScript only allows for Function Declarations in the root statement list of a script or function. Instead use a variable initialized with a Function Expression to define a function within a block:
+</p>
