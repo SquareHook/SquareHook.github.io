@@ -96,3 +96,36 @@ There are a couple places where missing semicolons are particularly dangerous:
 <p>
   While most script engines support Function Declarations within blocks it is not part of ECMAScript (see ECMA-262, clause 13 and 14). Worse implementations are inconsistent with each other and with future EcmaScript proposals. ECMAScript only allows for Function Declarations in the root statement list of a script or function. Instead use a variable initialized with a Function Expression to define a function within a block:
 </p>
+<br>
+
+<h3>Method and Property Definitions</h3>
+<p>
+  While there are several ways to attach methods and properties to an object created via "new", the preferred style for methods is:
+</p>
+<pre>
+  <code>
+    Foo.prototype.bar = function() {
+      /* ... */
+    };
+    
+    //The preferred style for other properties is to initialize the field in the constructor:
+    /** @constructor */
+    function Foo() {
+      this.bar = value;
+    }
+  </code>
+</pre>
+<h4>Why?</h4>
+<p>
+  Current JavaScript engines optimize based on the "shape" of an object, adding a property to an object (including overriding a value set on the prototype) changes the shape and can degrade performance.
+</p>
+
+
+
+
+
+
+
+
+
+
