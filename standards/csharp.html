@@ -5,6 +5,10 @@ title: C# Coding Standards
 
 
 <h2> C# Coding Standards</h2>
+<p> As a team, we have agreed upon conventions and code standards for C#. Following these standards will help to make your code more
+consistent readable for other developers. <strong>Please follow and enforce the standards below while writing code and 
+doing peer reviews. </strong>
+
 <h3>Comments </h3>
 <p>
     Comments should be placed throughout your code, especially in areas that are not easily understood at a glance. At the bare minimum, you should write a comment above each method. Use triple forward slashes to generate a comment that will show in Visual Studio auto-complete.
@@ -25,6 +29,46 @@ title: C# Coding Standards
                 . . . 
     </code>
   </pre>
+  
+<h3> Variable Naming Conventions </h3>
+
+<pre>
+    <code class="C#">
+        //namespaces should be upper camel case
+        namespace DataModels
+        {
+            //class names should be upper camel case
+            public class Widget
+            {
+                //private member variables should be lower camel case
+                private string name;
+                private int productNumber;
+        
+                //public member variables are upper camel case
+                public string CatalogNumber { get; }
+        
+                //method parameters are upper camel case
+                public Widget(string name, int productNumber)
+                {
+                    this.name = name;
+                    this.productNumber = productNumber;
+                    this.CatalogNumber = name + productNumber;
+                }
+        
+                //public methods are upper camel case
+                public void UpdateProductNumber(int productNumber)
+                {
+                    this.productNumber = productNumber;
+                }
+        
+                //private methods are lower camel case
+                private void doSomething()
+                {
+                }
+        }
+    
+    </code>
+</pre>
 
 <h3>Formatting</h3>
 <p>
