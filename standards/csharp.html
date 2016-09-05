@@ -34,39 +34,40 @@ doing peer reviews. </strong>
 
 <pre>
     <code class="C#">
+        //namespaces are upper camel case
         namespace DataModels
-{
-    //class names should be upper camel case
-    public class Widget
-    {
-        //private member variables should be lower camel case
-        private string name;
-
-        private int productNumber;
-
-        //public member variables are upper camel case
-        public string CatalogNumber { get; }
-
-        //method parameters are upper camel case
-        public Widget(string name, int productNumber)
         {
-            this.name = name;
-            this.productNumber = productNumber;
-            this.CatalogNumber = name + productNumber;
+            //class names should be upper camel case
+            public class Widget
+            {
+                //private member variables should be lower camel case
+                private string name;
+        
+                private int productNumber;
+        
+                //public member variables are upper camel case
+                public string CatalogNumber { get; }
+        
+                //method parameters are upper camel case
+                public Widget(string name, int productNumber)
+                {
+                    this.name = name;
+                    this.productNumber = productNumber;
+                    this.CatalogNumber = name + productNumber;
+                }
+        
+                //public methods are upper camel case
+                public void UpdateProductNumber(int productNumber)
+                {
+                    this.productNumber = productNumber;
+                }
+        
+                //private methods are lower camel case
+                private void doSomething()
+                {
+                }
+            }
         }
-
-        //public methods are upper camel case
-        public void UpdateProductNumber(int productNumber)
-        {
-            this.productNumber = productNumber;
-        }
-
-        //private methods are lower camel case
-        private void doSomething()
-        {
-        }
-    }
-}
     </code>
 </pre>
 
