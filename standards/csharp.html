@@ -30,8 +30,7 @@ doing peer reviews. </strong>
     </code>
   </pre>
   
-<h3> Variable Naming Conventions </h3>
-
+<h3> Variable Names </h3>
 <pre>
     <code class="C#">
         //namespaces are upper camel case
@@ -42,7 +41,6 @@ doing peer reviews. </strong>
             {
                 //private member variables should be lower camel case
                 private string name;
-        
                 private int productNumber;
         
                 //public member variables are upper camel case
@@ -68,6 +66,9 @@ doing peer reviews. </strong>
                 }
             }
         }
+        
+        //constants should be all uppercase
+        const double TAXRATE = 6.650;
     </code>
 </pre>
 
@@ -75,3 +76,15 @@ doing peer reviews. </strong>
 <p>
     Install <a href="http://www.codemaid.net/">Code Maid</a> or a simular utility to have Visual Studio auto-format your code.
 </p>
+<pre>
+    <code class="C#">
+        //constructor parameters should each be on their own line
+        var customer = new Person
+        {
+            Name: "Raul",
+            Age: 86,
+            Phone: "847-834-9301"
+        };
+        
+    </code>
+</pre>
